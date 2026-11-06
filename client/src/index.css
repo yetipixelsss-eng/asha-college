@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ── Frosted Glassmorphism Button System ── */
+:root {
+  /* ── 3 Major Academic Fonts ── */
+  --font-serif:    'EB Garamond', 'Georgia', 'Garamond', serif;
+  --font-display:  'Cinzel', 'Times New Roman', serif;
+  --font-sans:     'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* ── Core Brand: #00064f Deep Royal Navy ── */
+  --primary:        #00064f;
+  --primary-dark:   #000338;
+  --primary-mid:    #071080;
+  --primary-light:  #1a2d9e;
+  --primary-tint:   #EEF1FF;
+
+  /* ── Clean UI Geometric Tokens ── */
+  --btn-radius:           4px;
+  --badge-radius:         4px;
+  --card-radius:          6px;
+  --surface-subtle:       #F1F4FA;
+  --surface-border:       #D5DCED;
+
+  /* ── Gold Accent ── */
+  --gold:           #C9A84C;
+  --gold-light:     #E8C97A;
+  --gold-dark:      #A07828;
+
+  /* ── Accent Color: #54D6FF Cyan ── */
+  --accent:         #54D6FF;
+  --accent-glow:    0 0 14px rgba(84, 214, 255, 0.65);
+
+  /* ── Sky Blue Highlight ── */
+  --sky:            #4FC3F7;
+  --sky-dark:       #0288D1;
+
+  /* ── Neutrals ── */
+  --cream:          #F5F7FF;
+  --light-gray:     #ECEFFE;
+  --text-dark:      #0A0F2E;
+  --text-gray:      #4A5080;
+  --white:          #FFFFFF;
+
+  /* ── Gradients ── */
+  --grad-main:    linear-gradient(135deg, #00064f 0%, #071080 55%, #1a2d9e 100%);
+  --grad-gold:    linear-gradient(135deg, #C9A84C 0%, #E8C97A 100%);
+  --grad-light:   linear-gradient(145deg, #ffffff 0%, #EEF1FF 100%);
+
+  /* ── Shadows ── */
+  --shadow:       0 4px 20px rgba(0, 6, 79, 0.12);
+  --shadow-hover: 0 10px 36px rgba(0, 6, 79, 0.22);
+  --shadow-gold:  0 4px 18px rgba(201, 168, 76, 0.35);
+
+  --transition: all 0.3s ease;
+}
+
+/* ── Base Reset ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 14px;
+  }
+}
+
+/* ── Section Titles ── */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4.2vw, 2.35rem);
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.01em;
+  word-break: break-word;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  background: var(--grad-gold);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: var(--text-gray);
+  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+  margin-top: 20px;
+  line-height: 1.75;
+}
+
+/* ── Architectural Block Button System ── */
+.btn-primary,
+.btn-glass-primary {
+  position: relative;
+  background: #00064F;
+  color: #FFFFFF !important;
+  border: 1px solid #00064F;
+  border-radius: var(--btn-radius, 4px);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 12px 26px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 6, 79, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn-primary:hover,
+.btn-glass-primary:hover {
+  background: #B8933A;
+  border-color: #B8933A;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 6, 79, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active,
+.btn-glass-primary:active {
+  background: #9E7D28;
+  border-color: #9E7D28;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 6, 79, 0.15);
+}
+
+.btn-primary:focus-visible,
+.btn-glass-primary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Right Arrow Icon (PNG format from iconpacks.net/free-icon/right-arrow-3094.html) */
+.btn-arrow-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
+  filter: brightness(0) invert(1);
+}
+
+.btn-primary .btn-arrow-icon,
+.btn-glass-primary .btn-arrow-icon,
+.btn-outline .btn-arrow-icon,
+.navbar__cta .btn-arrow-icon,
+.navbar__mobile-cta .btn-arrow-icon,
+.hero__btn .btn-arrow-icon,
+.hero__btn-outline .btn-arrow-icon {
+  filter: brightness(0) invert(1);
+}
+
+.btn-primary:hover .btn-arrow-icon,
+.btn-glass-primary:hover .btn-arrow-icon,
+.btn-outline:hover .btn-arrow-icon,
+.navbar__cta:hover .btn-arrow-icon,
+.navbar__mobile-cta:hover .btn-arrow-icon,
+.hero__btn:hover .btn-arrow-icon,
+.hero__btn-outline:hover .btn-arrow-icon,
+button:hover .btn-arrow-icon {
+  transform: translateX(2px);
+}
+
+.btn-primary:disabled,
+.btn-glass-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+.btn-outline,
+.btn-glass {
+  position: relative;
+  background: #00064F;
+  color: #FFFFFF !important;
+  border: 1px solid #00064F;
+  border-radius: var(--btn-radius, 4px);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 12px 26px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 6, 79, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  outline: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn-outline:hover,
+.btn-glass:hover {
+  background: #B8933A;
+  border-color: #B8933A;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(0, 6, 79, 0.18);
+  transform: translateY(-1px);
+}
+
+.btn-outline:active,
+.btn-glass:active {
+  background: #9E7D28;
+  border-color: #9E7D28;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 6, 79, 0.15);
+}
+.btn-outline:focus-visible,
+.btn-glass:focus-visible {
+  outline: 2px solid #00064F;
+  outline-offset: 2px;
+}
+
+.btn-outline:disabled,
+.btn-glass:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+/* ── Category Badges ── */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--badge-radius, 4px);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-cultural      { background: #E8F0FF; color: #00064f; }
+.badge-academic      { background: #E4F0FF; color: #0288D1; }
+.badge-announcement  { background: #E8F5E9; color: #2E7D32; }
+.badge-achievement   { background: #FFF8E1; color: #A07828; }
+.badge-sports        { background: #F3E5F5; color: #6A1B9A; }
+.badge-infrastructure{ background: #E0F2F1; color: #00695C; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--primary-tint); }
+::-webkit-scrollbar-thumb { background: var(--primary-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.animate-fadeInUp { animation: fadeInUp 0.6s ease forwards; }
+.animate-fadeIn   { animation: fadeIn 0.6s ease forwards; }
+
+/* ── Global Responsive Utilities ── */
+@media (max-width: 768px) {
+  .page-section,
+  .sc-section,
+  .about,
+  .aiesec,
+  .contact,
+  .events {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-section,
+  .sc-section,
+  .about,
+  .aiesec,
+  .contact,
+  .events {
+    padding: 48px 0;
+  }
+}

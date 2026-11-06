@@ -1,0 +1,32 @@
+.btn-arrow-icon {
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
+  filter: brightness(0) invert(1);
+}
+
+/* Primary buttons (navy background #00064F, white text): crisp white arrow */
+.btn-primary .btn-arrow-icon,
+.btn-glass-primary .btn-arrow-icon,
+.btn-outline .btn-arrow-icon,
+.navbar__cta .btn-arrow-icon,
+.navbar__mobile-cta .btn-arrow-icon,
+.hero__btn .btn-arrow-icon,
+.hero__btn-outline .btn-arrow-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Smooth directional motion on button hover */
+.btn-primary:hover .btn-arrow-icon,
+.btn-glass-primary:hover .btn-arrow-icon,
+.btn-outline:hover .btn-arrow-icon,
+.navbar__cta:hover .btn-arrow-icon,
+.navbar__mobile-cta:hover .btn-arrow-icon,
+.hero__btn:hover .btn-arrow-icon,
+.hero__btn-outline:hover .btn-arrow-icon,
+button:hover .btn-arrow-icon {
+  transform: translateX(2px);
+}
+

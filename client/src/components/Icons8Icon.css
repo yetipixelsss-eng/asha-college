@@ -1,0 +1,149 @@
+/* ── Icons8 Glyph Neue Icon System (Plain Monochrome with Natural Specular Glow) ── */
+.icons8-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  flex-shrink: 0;
+  position: relative;
+  color: currentColor;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icons8-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+  shape-rendering: geometricPrecision;
+  text-rendering: geometricPrecision;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Authentic Glyph Neue Solid Silhouette Precision */
+.icons8-glyph-neue svg {
+  overflow: visible;
+}
+
+/* Natural Specular Optical Glow — Pure frosted glass luminescence, no artificial neon blue */
+.icons8-icon--glow {
+  filter: drop-shadow(0 1px 2px rgba(0, 6, 79, 0.4))
+          drop-shadow(0 0 5px rgba(255, 255, 255, 0.45));
+}
+
+.icons8-icon--glow:hover,
+.icons8-icon--glow-hover:hover {
+  filter: drop-shadow(0 2px 4px rgba(0, 6, 79, 0.5))
+          drop-shadow(0 0 9px rgba(255, 255, 255, 0.7));
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Plain Monochrome Color Options — Zero Artificial Tint */
+/* Crisp White on dark backgrounds, buttons, and navy surfaces */
+.icons8-icon--white,
+.icons8-icon--accent {
+  color: #FFFFFF !important;
+}
+
+/* Plain Primary Deep Navy on white / light card backgrounds */
+.icons8-icon--primary {
+  color: #00064F !important;
+}
+
+.icons8-icon--primary.icons8-icon--glow {
+  filter: drop-shadow(0 1px 2px rgba(0, 6, 79, 0.18));
+}
+
+.icons8-icon--primary.icons8-icon--glow:hover {
+  filter: drop-shadow(0 2px 4px rgba(0, 6, 79, 0.28));
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Natural Warm Gold for Awards & Honours */
+.icons8-icon--gold {
+  color: #C9A84C !important;
+}
+
+.icons8-icon--gold.icons8-icon--glow {
+  filter: drop-shadow(0 1px 2px rgba(0, 6, 79, 0.35))
+          drop-shadow(0 0 6px rgba(201, 168, 76, 0.45));
+}
+
+/* Subtle button-internal icon optical align */
+.btn-primary .icons8-icon,
+.btn-outline .icons8-icon,
+.btn-glass .icons8-icon {
+  margin-top: -1px;
+}
+
+/* Architectural Pedestal Badge for Feature Cards */
+.icons8-pedestal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 2px 8px rgba(0, 6, 79, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icons8-pedestal:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 6, 79, 0.22);
+  transform: translateY(-1px);
+}
+
+.icons8-pedestal--navy {
+  background: rgba(0, 6, 79, 0.08);
+  border-color: rgba(0, 6, 79, 0.15);
+}
+
+.icons8-pedestal--navy:hover {
+  background: rgba(0, 6, 79, 0.14);
+  border-color: rgba(0, 6, 79, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 6, 79, 0.15);
+}
+
+/* Spinning Animation for Loading Indicators */
+@keyframes icons8-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.icons8-icon--spin svg {
+  animation: icons8-spin 1s linear infinite;
+}
+
+/* Icons8 Official Attribution in Footer */
+.icons8-attribution {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 8px rgba(0, 6, 79, 0.2);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.icons8-attribution:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 6, 79, 0.25);
+  transform: translateY(-1px);
+}

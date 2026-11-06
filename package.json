@@ -1,0 +1,13 @@
+{
+  "name": "asha-school-college",
+  "version": "1.0.0",
+  "description": "Asha School/College Website - React + Node.js",
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "cd client && npm install && cd ../server && npm install",
+    "start": "cd server && node index.js"
+  },
+  "keywords": ["asha", "school", "college", "nepal", "react", "nodejs"]
+}
+
