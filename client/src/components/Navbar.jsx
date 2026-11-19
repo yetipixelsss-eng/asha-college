@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 import Icons8Icon from './Icons8Icon';
-import RightArrowIcon from './RightArrowIcon';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,7 +15,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 40);
+    const handleScroll = () => setIsScrolled(window.scrollY > 36);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -52,10 +52,10 @@ const Navbar = () => {
   const isDropdownActive = location.pathname === '/school' || location.pathname === '/college';
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''} ${isMobileOpen ? 'navbar--mobile-open' : ''}`}>
       <div className="navbar__inner container">
-        {/* Logo */}
-        <Link to="/" className="navbar__logo">
+        {/* Actual Asha Logo */}
+        <Link to="/" className="navbar__logo" aria-label="Asha School / College Home">
           <img src={logo} alt="Asha School / College Logo" />
           <div className="navbar__logo-text">
             <span className="navbar__logo-title">ASHA</span>
@@ -63,7 +63,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Centered Desktop Navigation */}
         <ul className="navbar__links">
           {navLinks.map((link) => {
             const isActive = link.hasDropdown ? isDropdownActive : location.pathname === link.path;
@@ -78,6 +78,7 @@ const Navbar = () => {
               >
                 {link.hasDropdown ? (
                   <button
+                    type="button"
                     className={`navbar__link ${isActive ? 'active' : ''} ${schoolDropdown ? 'navbar__link--open' : ''}`}
                     onClick={(e) => {
                       e.stopPropagation();
@@ -116,8 +117,11 @@ const Navbar = () => {
                         setIsDropdownHeld(false);
                       }}
                     >
-                      <Icons8Icon name="school" size={20} variant="accent" glow />
-                      <span>School (Nursery – Grade 10)</span>
+                      <Icons8Icon name="school" size={18} variant="gold" />
+                      <div>
+                        <span className="navbar__dropdown-title">Asha School</span>
+                        <span className="navbar__dropdown-meta">Nursery – Grade 10 (SEE)</span>
+                      </div>
                     </Link>
                     <Link
                       to="/college"
@@ -127,8 +131,11 @@ const Navbar = () => {
                         setIsDropdownHeld(false);
                       }}
                     >
-                      <Icons8Icon name="cap" size={20} variant="accent" glow />
-                      <span>College (+2 Level)</span>
+                      <Icons8Icon name="cap" size={18} variant="gold" />
+                      <div>
+                        <span className="navbar__dropdown-title">Asha College</span>
+                        <span className="navbar__dropdown-meta">+2 Level (NEB)</span>
+                      </div>
                     </Link>
                   </div>
                 )}
@@ -137,23 +144,28 @@ const Navbar = () => {
           })}
         </ul>
 
-        {/* CTA */}
-        <button className="btn-primary navbar__cta" onClick={() => navigate('/contact')}>
+        {/* Right Gold CTA */}
+        <button
+          type="button"
+          className="navbar__cta"
+          onClick={() => navigate('/contact')}
+        >
           <span>Apply Now</span>
-          <RightArrowIcon size={18} />
         </button>
 
-        {/* Mobile hamburger */}
+        {/* Mobile Hamburger */}
         <button
+          type="button"
           className={`navbar__hamburger ${isMobileOpen ? 'open' : ''}`}
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isMobileOpen}
         >
           <span /><span /><span />
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Responsive Mobile Drawer */}
       <div className={`navbar__mobile ${isMobileOpen ? 'navbar__mobile--open' : ''}`}>
         <Link
           to="/"
@@ -189,7 +201,7 @@ const Navbar = () => {
                       setMobileDropdown(false);
                     }}
                   >
-                    <Icons8Icon name="school" size={18} variant="accent" glow />
+                    <Icons8Icon name="school" size={16} variant="gold" />
                     <span>School (Nursery – Grade 10)</span>
                   </Link>
                   <Link
@@ -200,7 +212,7 @@ const Navbar = () => {
                       setMobileDropdown(false);
                     }}
                   >
-                    <Icons8Icon name="cap" size={18} variant="accent" glow />
+                    <Icons8Icon name="cap" size={16} variant="gold" />
                     <span>College (+2 Level)</span>
                   </Link>
                 </div>
@@ -220,7 +232,8 @@ const Navbar = () => {
           </div>
         ))}
         <button
-          className="btn-primary navbar__mobile-cta"
+          type="button"
+          className="navbar__mobile-cta"
           onClick={() => {
             setIsMobileOpen(false);
             setMobileDropdown(false);
@@ -228,7 +241,6 @@ const Navbar = () => {
           }}
         >
           <span>Apply Now</span>
-          <RightArrowIcon size={18} />
         </button>
       </div>
     </nav>

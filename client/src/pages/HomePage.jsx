@@ -37,7 +37,7 @@ const HomePage = () => {
         <div className="container">
           <div className="home-cta-card">
             <div className="home-cta-badge">
-              <Icons8Icon name="star" size={16} variant="gold" glow />
+              <Icons8Icon name="star" size={14} variant="gold" />
               <span>Admissions Open 2081/82</span>
             </div>
             <h2>Begin Your Academic Journey With Asha</h2>
@@ -46,12 +46,11 @@ const HomePage = () => {
               Explore our modern classrooms, meet experienced faculty, and discover scholarship opportunities.
             </p>
             <div className="home-cta-actions">
-              <button className="btn-primary" onClick={() => navigate('/contact')}>
+              <button type="button" className="btn-gold" onClick={() => navigate('/contact')}>
                 <span>Apply for Admission</span>
-                <RightArrowIcon size={18} />
+                <RightArrowIcon size={16} />
               </button>
-              <button className="btn-primary" onClick={() => navigate('/about')}>
-                <Icons8Icon name="school" size={18} variant="accent" glow />
+              <button type="button" className="home-cta-secondary-btn" onClick={() => navigate('/about')}>
                 <span>Learn More About Us</span>
               </button>
             </div>

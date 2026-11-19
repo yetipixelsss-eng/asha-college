@@ -28,72 +28,85 @@
 
 /* ── Home Page Callout Banner ── */
 .home-cta-banner {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #00064F 0%, #060f5e 60%, #00032b 100%);
+  padding: 88px 0;
+  background: var(--ivory);
   position: relative;
-  overflow: hidden;
-}
-
-.home-cta-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
-  pointer-events: none;
 }
 
 .home-cta-card {
   position: relative;
-  z-index: 2;
   text-align: center;
-  max-width: 800px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: 48px 36px;
-  background: #000438;
-  border: 1px solid rgba(201, 168, 76, 0.35);
-  border-radius: 4px;
-  box-shadow: 0 16px 48px rgba(0, 6, 79, 0.4);
+  padding: 56px 44px;
+  background: var(--primary);
+  border: 1px solid rgba(197, 163, 74, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(16, 27, 77, 0.14);
 }
 
 .home-cta-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  border-radius: 4px;
-  background: rgba(201, 168, 76, 0.15);
-  border: 1px solid rgba(201, 168, 76, 0.4);
-  color: var(--gold, #C9A84C);
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(197, 163, 74, 0.14);
+  border: 1px solid rgba(197, 163, 74, 0.35);
+  color: var(--gold-light);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .home-cta-card h2 {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 4.8vw, 2.35rem);
+  font-size: clamp(1.75rem, 3.6vw, 2.45rem);
   font-weight: 600;
-  color: #FFFFFF;
+  color: var(--white);
   margin-bottom: 16px;
-  line-height: 1.25;
-  letter-spacing: -0.01em;
+  line-height: 1.22;
 }
 
 .home-cta-card p {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(0.92rem, 2.2vw, 1.05rem);
-  line-height: 1.65;
-  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(0.95rem, 1.8vw, 1.03rem);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto 32px;
 }
 
 .home-cta-actions {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
+}
+
+.home-cta-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  min-height: 46px;
+  border-radius: var(--btn-radius);
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.93rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.home-cta-secondary-btn:hover {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--primary);
 }
 
 @media (max-width: 600px) {
@@ -102,7 +115,8 @@
   }
 
   .home-cta-card {
-    padding: 32px 18px;
+    padding: 36px 20px;
+    border-radius: 14px;
   }
 
   .home-cta-actions {
